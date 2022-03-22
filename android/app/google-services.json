@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "84919870160",
+    "project_id": "cicd-flastlane",
+    "storage_bucket": "cicd-flastlane.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84919870160:android:dab23717b3eb79850d74d5",
+        "android_client_info": {
+          "package_name": "com.hoangtv.cicd_fastlane.ci_cd_fastlane"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "84919870160-uktftigi7i8f03vv0lmev8ku9508ospf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvF_l9T9OLk-lw86NvhF_Cqo3PxlirJSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84919870160-uktftigi7i8f03vv0lmev8ku9508ospf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
