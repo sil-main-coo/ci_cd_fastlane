@@ -2,7 +2,7 @@ name: test
 on:
   push:
     branches:
-      - master
+      - main
     jobs:
       build_apk:
         runs-on: macos-latest
