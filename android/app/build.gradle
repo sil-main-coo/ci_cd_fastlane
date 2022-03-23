@@ -21,14 +21,6 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
-def keystoreProperties = new Properties()
-def keystorePropertiesFile = rootProject.file('key.properties')
-if (keystorePropertiesFile.exists()) {
-    keystoreProperties.withReader('UTF-8') { reader ->
-        keystoreProperties.load(reader)
-    }
-}
-
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
@@ -42,7 +34,7 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+//        jvmTarget = '1.8'
     }
 
     sourceSets {
@@ -60,10 +52,15 @@ android {
 
     buildTypes {
         release {
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
-            storeFile rootProject.file('key.jks')
-            storePassword keystoreProperties['storePassword']
+            def keystoreProperties = new Properties()
+            def keystorePropertiesFile = rootProject.file('key.properties')
+            if (keystorePropertiesFile.exists()) {
+                keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+                storeFile rootProject.file('key.jks')
+                storePassword keystoreProperties['storePassword']
+            }
         }
     }
 }
