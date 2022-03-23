@@ -24,7 +24,7 @@ platform :android do
   desc "Increment Android version code"
   lane :increment_android_version_code do
     increment_version_code(
-          gradle_file_path: "project/build.gradle",
+          gradle_file_path: "app/build.gradle",
           #ext_constant_name: "test"
           #app_folder_name:"app"
     )
