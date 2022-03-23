@@ -22,6 +22,10 @@ jobs:
       working-directory: ${{ github.workspace }}/android
       run: bundle install
 
+    - name: Flutter clean
+      working-directory: ${{ github.workspace }}
+      run: flutter clean
+
     - name: Flutter get
       working-directory: ${{ github.workspace }}
       run: flutter pub get
@@ -40,7 +44,7 @@ jobs:
 
     - name: Build APK
       working-directory: ${{ github.workspace }}
-      run: flutter build apk
+      run: flutter build appbundle --release
 
     - name: Create Firebase Service Credentials file
       run: |
