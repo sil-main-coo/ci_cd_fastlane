@@ -44,7 +44,7 @@ jobs:
 
     - name: Build APK
       working-directory: ${{ github.workspace }}
-      run: flutter build appbundle --release
+      run: flutter build apk
 
     - name: Create Firebase Service Credentials file
       run: |
