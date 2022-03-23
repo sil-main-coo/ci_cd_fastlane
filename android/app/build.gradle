@@ -34,7 +34,7 @@ android {
     }
 
     kotlinOptions {
-//        jvmTarget = '1.8'
+        jvmTarget = '1.8'
     }
 
     sourceSets {
@@ -50,7 +50,7 @@ android {
         versionName flutterVersionName
     }
 
-    buildTypes {
+    signingConfigs {
         release {
             def keystoreProperties = new Properties()
             def keystorePropertiesFile = rootProject.file('key.properties')
@@ -61,6 +61,12 @@ android {
                 storeFile rootProject.file('key.jks')
                 storePassword keystoreProperties['storePassword']
             }
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
         }
     }
 }
