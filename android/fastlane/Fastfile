@@ -44,7 +44,7 @@ platform :android do
             release_notes: "Lots of amazing new features to test out!",
             android_artifact_type: "AAB",
             android_artifact_path: "../build/app/outputs/bundle/release/app-release.aab",
-            service_credentials_file: ENV["FIREBASE_CREDENTIALS"]
+            service_credentials_file: "firebase_credentials.json"
         )
     end
 end
