@@ -27,7 +27,7 @@ jobs:
       run: flutter pub get
 
     - name: Decode Keystore
-      run: echo "${{ secrets.KEYSTORE }}" | base64 --decode > ${{ github.workspace }}/android/app.jks
+      run: echo "${{ secrets.KEYSTORE }}" | base64 --decode > ${{ github.workspace }}/android/key.jks
 
     - name: Set up key.properties
       working-directory: ${{ github.workspace }}
