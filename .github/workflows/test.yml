@@ -42,9 +42,9 @@ jobs:
       env:
         PROPERTIES_PATH: "${{ github.workspace }}/android/key.properties"
 
-    - name: Increment Android version
-      working-directory: ${{ github.workspace }}/android
-      run: bundle exec fastlane increment_android_version_code
+#    - name: Increment Android version
+#      working-directory: ${{ github.workspace }}/android
+#      run: bundle exec fastlane increment_android_version_code
 
     - name: Build APK
       working-directory: ${{ github.workspace }}
