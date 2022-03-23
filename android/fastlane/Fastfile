@@ -37,14 +37,14 @@ platform :android do
   end
 
   desc "Upload Android App to Firebase"
-    lane :distribute_android_app do
-        firebase_app_distribution(
-            app: ENV["FIREBASE_APP_ID_ANDROID"],
-            testers: "jvmainn@gmail.com, hoangvt979@gmail.com",
-            release_notes: "Lots of amazing new features to test out!",
-            android_artifact_type: "APK",
-            android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
-            service_credentials_file: "firebase_credentials.json"
-        )
-    end
+  lane :distribute_android_app do
+      firebase_app_distribution(
+          app: ENV["FIREBASE_APP_ID_ANDROID"],
+          testers: "jvmainn@gmail.com, hoangvt979@gmail.com",
+          release_notes: "Lots of amazing new features to test out!",
+          android_artifact_type: "APK",
+          android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
+          service_credentials_file: "firebase_credentials.json"
+      )
+  end
 end
