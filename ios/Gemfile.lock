@@ -1,9 +1,3 @@
-GIT
-  remote: https://github.com/fastlane/fastlane-plugin-firebase_app_distribution.git
-  revision: 31293c2f625f63af15417dc04ab36eeb67fd9e11
-  specs:
-    fastlane-plugin-firebase_app_distribution (0.3.3)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -72,7 +66,7 @@ GEM
     faraday_middleware (1.2.0)
       faraday (~> 1.0)
     fastimage (2.2.6)
-    fastlane (2.205.0)
+    fastlane (2.205.1)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.8, < 3.0.0)
       artifactory (~> 3.0)
@@ -111,6 +105,7 @@ GEM
       xcodeproj (>= 1.13.0, < 2.0.0)
       xcpretty (~> 0.3.0)
       xcpretty-travis-formatter (>= 0.0.3)
+    fastlane-plugin-firebase_app_distribution (0.3.3)
     gh_inspector (1.1.3)
     google-apis-androidpublisher_v3 (0.16.0)
       google-apis-core (>= 0.4, < 2.a)
@@ -219,7 +214,7 @@ PLATFORMS
 
 DEPENDENCIES
   fastlane
-  fastlane-plugin-firebase_app_distribution!
+  fastlane-plugin-firebase_app_distribution
 
 BUNDLED WITH
    2.3.9
