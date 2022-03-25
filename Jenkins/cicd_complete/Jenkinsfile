@@ -70,9 +70,9 @@ void buildAndroid() {
 }
 
 void distriButeAndroid() {
-    echo "BUILDING APK  STARTED"
-    sh "flutter build apk --release"
-    echo "BUILDING APK  END"
+    echo "installAndroidGems  STARTED"
+    sh 'bundle install'
+    echo "installAndroidGems  END"
 
     echo "FASTLANE  STARTED"
     //use gradle if fastlane not supported (headless linux)
