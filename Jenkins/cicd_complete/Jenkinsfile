@@ -21,7 +21,6 @@ pipeline {
                     dir('ci_cd_fastlane') { buildiOS() }
                     dir('ci_cd_fastlane/ios') { distributeiOS() }
                     } else if (env.GIT_COMMIT_MSG == 'DEPLOY ANDROID') {
-                    dir('ci_cd_fastlane/android') { installGEMAndroid() }
                     dir('ci_cd_fastlane') { buildAndroid() }
                     dir('ci_cd_fastlane/android') { distriButeAndroid() }
                     } else if (env.GIT_COMMIT_MSG == 'DEPLOY BOTH') {
