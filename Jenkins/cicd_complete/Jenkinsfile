@@ -21,6 +21,7 @@ pipeline {
                     dir('ci_cd_fastlane') { buildiOS() }
                     dir('ci_cd_fastlane/ios') { distributeiOS() }
                     } else if (env.GIT_COMMIT_MSG == 'DEPLOY ANDROID') {
+                    dir('ci_cd_fastlane/android') { installGEMAndroid() }
                     dir('ci_cd_fastlane') { buildAndroid() }
                     dir('ci_cd_fastlane/android') { distriButeAndroid() }
                     } else if (env.GIT_COMMIT_MSG == 'DEPLOY BOTH') {
@@ -63,6 +64,12 @@ void distributeiOS() {
     echo "FASTLANE  END"
 }
 
+void installGEMAndroid(){
+    echo "installAndroidGems  STARTED"
+    sh 'bundle install'
+    echo "installAndroidGems  END"
+}
+
 void buildAndroid() {
     echo "BUILDING APK  STARTED"
     sh "flutter build apk --release"
@@ -70,10 +77,6 @@ void buildAndroid() {
 }
 
 void distriButeAndroid() {
-    echo "installAndroidGems  STARTED"
-    sh 'bundle install'
-    echo "installAndroidGems  END"
-
     echo "FASTLANE  STARTED"
     //use gradle if fastlane not supported (headless linux)
     //sh './gradlew clean build'
