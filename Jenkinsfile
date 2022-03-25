@@ -10,24 +10,24 @@ pipeline {
                   //get comments programmatically
                     env.GIT_COMMIT_MSG = sh (script: 'git log -1 --pretty=%B ${GIT_COMMIT}', returnStdout: true).trim()
                     //by default testing will be done
-                    dir('weather_rx_stream_sink') {
+                    dir('ci_cd_fastlane') {
                         testCodeQuality()
                     }
                     if (env.GIT_COMMIT_MSG == 'BUILD IOS') {
-                    dir('weather_rx_stream_sink') { buildiOS() }
+                    dir('ci_cd_fastlane') { buildiOS() }
                     } else if (env.GIT_COMMIT_MSG == 'BUILD ANDROID'){
-                    dir('weather_rx_stream_sink') { buildAndroid() }
+                    dir('ci_cd_fastlane') { buildAndroid() }
                     } else if (env.GIT_COMMIT_MSG == 'DEPLOY IOS') {
-                    dir('weather_rx_stream_sink') { buildiOS() }
-                    dir('weather_rx_stream_sink/ios') { distributeiOS() }
+                    dir('ci_cd_fastlane') { buildiOS() }
+                    dir('ci_cd_fastlane/ios') { distributeiOS() }
                     } else if (env.GIT_COMMIT_MSG == 'DEPLOY ANDROID') {
-                    dir('weather_rx_stream_sink') { buildAndroid() }
-                    dir('weather_rx_stream_sink/android') { distriButeAndroid() }
+                    dir('ci_cd_fastlane') { buildAndroid() }
+                    dir('ci_cd_fastlane/android') { distriButeAndroid() }
                     } else if (env.GIT_COMMIT_MSG == 'DEPLOY BOTH') {
-                    dir('weather_rx_stream_sink') { buildiOS() }
-                    dir('weather_rx_stream_sink/ios') { distributeiOS() }
-                    dir('weather_rx_stream_sink') { buildAndroid() }
-                    dir('weather_rx_stream_sink/android') { distriButeAndroid() }
+                    dir('ci_cd_fastlane') { buildiOS() }
+                    dir('ci_cd_fastlane/ios') { distributeiOS() }
+                    dir('ci_cd_fastlane') { buildAndroid() }
+                    dir('ci_cd_fastlane/android') { distriButeAndroid() }
                     }
                 }
             }
