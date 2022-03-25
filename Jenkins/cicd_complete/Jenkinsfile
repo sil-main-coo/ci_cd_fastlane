@@ -10,9 +10,9 @@ pipeline {
                   //get comments programmatically
                     env.GIT_COMMIT_MSG = sh (script: 'git log -1 --pretty=%B ${GIT_COMMIT}', returnStdout: true).trim()
                     //by default testing will be done
-                    dir('ci_cd_fastlane') {
-                        testCodeQuality()
-                    }
+//                     dir('ci_cd_fastlane') {
+//                         testCodeQuality()
+//                     }
                     if (env.GIT_COMMIT_MSG == 'BUILD IOS') {
                     dir('ci_cd_fastlane') { buildiOS() }
                     } else if (env.GIT_COMMIT_MSG == 'BUILD ANDROID'){
@@ -36,20 +36,20 @@ pipeline {
 }
 
 //if commit message does not includes BUILD IOS'/'BUILD ANDROID'/'DEPLOY IOS'/'DEPLOY ANDROID'/'DEPLOY BOTH'
-void testCodeQuality() {
-
-    echo "TESTING STARTED"
-    sh "flutter test --coverage"
-    sh "genhtml coverage/lcov.info -o coverage/"
-    publishHTML (target : [allowMissing: false,
-    alwaysLinkToLastBuild: true,
-    keepAll: true,
-    reportDir: 'coverage',
-    reportFiles: 'index.html',
-    reportName: 'My Reports',
-    reportTitles: 'The Report'])
-    echo "TESTING END"
-    }
+// void testCodeQuality() {
+//
+//     echo "TESTING STARTED"
+//     sh "flutter test --coverage"
+//     sh "genhtml coverage/lcov.info -o coverage/"
+//     publishHTML (target : [allowMissing: false,
+//     alwaysLinkToLastBuild: true,
+//     keepAll: true,
+//     reportDir: 'coverage',
+//     reportFiles: 'index.html',
+//     reportName: 'My Reports',
+//     reportTitles: 'The Report'])
+//     echo "TESTING END"
+//     }
 
 void buildiOS() {
     echo "BUILDING IOS  STARTED"
