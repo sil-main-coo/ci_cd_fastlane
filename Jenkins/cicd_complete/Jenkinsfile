@@ -65,7 +65,7 @@ void distributeiOS() {
 
 void buildAndroid() {
     echo "BUILDING APK  STARTED"
-    sh "flutter build apk"
+    sh "flutter build apk --release"
     echo "BUILDING APK  END"
 }
 
