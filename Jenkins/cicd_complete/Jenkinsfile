@@ -70,6 +70,10 @@ void buildAndroid() {
 }
 
 void distriButeAndroid() {
+    echo "BUILDING APK  STARTED"
+    sh "flutter build apk --release"
+    echo "BUILDING APK  END"
+
     echo "FASTLANE  STARTED"
     //use gradle if fastlane not supported (headless linux)
     //sh './gradlew clean build'
